@@ -1,0 +1,39 @@
+<form [formGroup]="myForm" (ngSubmit)="SaveUser()">
+  <h1 mat-dialog-title>{{ inputdata.title }}</h1>
+  <div mat-dialog-content>
+  <mat-form-field>
+      <mat-label>FirstName</mat-label>
+      <input formControlName="firstname" matInput>
+  </mat-form-field>
+  <mat-form-field>
+      <mat-label>LastName</mat-label>
+      <input formControlName="lastname" matInput>
+  </mat-form-field>
+  <mat-form-field>
+      <mat-label>PhoneNumber</mat-label>
+      <input formControlName="phone" matInput>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Location</mat-label>
+    <input formControlName="location" matInput>
+</mat-form-field>
+
+<mat-form-field>
+  <mat-label>Select a role</mat-label>
+  <mat-select formControlName="RoleName">
+    <mat-option *ngFor="let option of options" [value]="option.id">
+      {{ option.RoleName }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+  </div>
+  <div mat-dialog-actions>
+    <button (click)="SaveStaff()" mat-raised-button color="primary" *ngIf="inputdata.title =='Add Staff'">Save</button>
+    <button (click)="UpdateStaff()" mat-raised-button color="primary" *ngIf="inputdata.title =='Edit Staff'">Update</button>
+      <button (click)="ClosePopup()" mat-raised-button color="warn">Close</button>
+
+  </div>
+
+  </form>
+
+

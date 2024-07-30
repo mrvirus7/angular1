@@ -1,0 +1,45 @@
+<form [formGroup]="myForm" >
+  <h1 mat-dialog-title>Add Staff Member</h1>
+  <div mat-dialog-content>
+
+    <mat-form-field>
+      <mat-label>Select a NAME</mat-label>
+      <mat-select formControlName="Name">
+        <mat-option *ngFor="let option of Nameoptions" [value]="option.id">
+          <td>{{option.firstname + ' '+ option.lastname}}</td>
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+  <mat-form-field>
+      <mat-label>ProjectName</mat-label>
+      <input formControlName="projectname" matInput>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Primary Successor</mat-label>
+    <mat-select  formControlName="PrimarySuccessor">
+      <mat-option *ngFor="let option of Nameoptions" [value]="option.id">
+        <td>{{option.firstname + ' '+ option.lastname}}</td>
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Secondary Successor</mat-label>
+    <mat-select  formControlName="SecondarySuccessor">
+      <mat-option *ngFor="let option of Nameoptions" [value]="option.id">
+        <td>{{option.firstname + ' '+ option.lastname}}</td>
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  </div>
+  <div mat-dialog-actions>
+      <button mat-raised-button color="primary">Save</button>
+      <button (click)="ClosePopup()" mat-raised-button color="warn">Close</button>
+
+  </div>
+
+  </form>
+
+
+

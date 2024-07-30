@@ -1,0 +1,49 @@
+<section class="section">
+    <div class="row">
+       <div class="col-lg-12">
+          <div class="card">
+             <div class="card-body">
+              <h1 class="h1-style">Registration Form</h1>
+
+              <button style="margin-left: 80%;" mat-raised-button color="primary" (click)="openpopup()">Add Staff(+)</button>
+
+
+            <div class="container mt-4">
+                <div class="card">
+                    <table class="table">
+                        <thead>
+                          <tr>
+                            <th scope="col">S/no</th>
+                            <th scope="col">FirstName</th>
+                            <th scope="col">LastName</th>
+                            <th scope="col">PhoneNumber</th>
+                            <th scope="col">Location</th>
+                            <th scope="col">Role</th>
+
+                            <th scope="col">Action</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                        <tr *ngFor="let lists of data,let i=index">
+                            <td>{{lists.id}}</td>
+                            <td>{{lists.firstname}}</td>
+                            <td>{{lists.lastname}}</td>
+                            <td>{{lists.phone}}</td>
+                            <td>{{lists.location}}</td>
+                            <td>{{lists.RoleName}}</td>
+                            <td>
+                              <mat-icon color="warn">delete</mat-icon>
+                              <mat-icon color="primary">edit</mat-icon>
+                            </td>
+
+                          </tr>
+                          </tbody>
+                          </table>
+              </div>
+              </div>
+             </div>
+          </div>
+       </div>
+    </div>
+ </section>
+

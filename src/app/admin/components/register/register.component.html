@@ -1,0 +1,48 @@
+<section class="section">
+  <div class="row">
+     <div class="col-lg-12">
+        <div class="card">
+           <div class="card-body">
+            <h1 class="h1-style">Succession Plane Form</h1>
+
+            <button style="margin-left: 75%;" mat-raised-button color="primary" (click)="addUser()" >Add Successor(+)</button>
+
+
+          <div class="container mt-4">
+              <div class="card">
+                  <table class="table">
+                      <thead>
+                        <tr>
+                          <th scope="col">S/no</th>
+                          <th scope="col">Name</th>
+                          <th scope="col">Role/ProjectName</th>
+                          <th scope="col">Primary Successor</th>
+                          <th scope="col">Secondary Successor</th>
+
+                          <th scope="col">Action</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                      <tr *ngFor="let lists of data,let i=index">
+                          <td>{{i+1}}</td>
+                          <td>{{ lists.NAMEFirstName + ' ' + lists.NAMELastName }}</td>
+                          <td>{{lists.ProjectName}}</td>
+                          <td>{{ lists.PrimarySuccessorFirstname + ' ' + lists.PrimarySuccessorLastname }}</td>
+                          <td>{{ lists.SecondarySuccessorFirstname + ' ' + lists.SecondarySuccessorLastname }}</td>
+
+                          <td>
+                            <mat-icon color="warn">delete</mat-icon>
+                            <mat-icon color="primary" (click)="updateUser(lists)">edit</mat-icon>
+                          </td>
+
+                        </tr>
+                        </tbody>
+                        </table>
+            </div>
+            </div>
+           </div>
+        </div>
+     </div>
+  </div>
+</section>
+
